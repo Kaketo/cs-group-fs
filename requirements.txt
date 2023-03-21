@@ -1,4 +1,4 @@
-pyitlib==0.2.2
-numpy==1.24.2
-scikit-learn==1.1.2
+pyitlib==0.2.3
+numpy
+scikit-learn
 matplotlib

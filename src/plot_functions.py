@@ -3,13 +3,14 @@ from sklearn.metrics import roc_auc_score
 
 import matplotlib.pyplot as plt
 
+
 def score(X_train, y_train, X_test, y_test, feature_order):
     total_scores = []
     model = LogisticRegression(max_iter=2000)
     for i, _ in enumerate(feature_order):
         cur_vars = feature_order[0:i+1]
-        model.fit(X_train.iloc[:,cur_vars], y_train)
-        y_pred = model.predict_proba(X_test.iloc[:,cur_vars])[:,1]
+        model.fit(X_train[:,cur_vars], y_train)
+        y_pred = model.predict_proba(X_test[:,cur_vars])[:,1]
         total_scores.append(roc_auc_score(y_test, y_pred))
 
     return total_scores
