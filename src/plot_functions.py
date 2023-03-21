@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def score(X_train, y_train, X_test, y_test, feature_order):
     total_scores = []
-    model = LogisticRegression(max_iter=2000)
+    model = LogisticRegression(max_iter=10000)
     for i, _ in enumerate(feature_order):
         cur_vars = feature_order[0:i+1]
         model.fit(X_train[:,cur_vars], y_train)
